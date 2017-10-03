@@ -69,7 +69,7 @@ class Serial(SerialBase):
             self._overlapped_write.hEvent = win32.CreateEvent(None, 0, 0, None)
 
             # Setup a 4k buffer
-            win32.SetupComm(self._port_handle, 4096, 4096)
+            win32.SetupComm(self._port_handle, 16384, 16384)
 
             # Save original timeout values:
             self._orgTimeouts = win32.COMMTIMEOUTS()
